@@ -1,25 +1,77 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>popcorn</title>
-    <!-- <link rel="icon" type="image/png" href="assets/favicon.png"> -->
+    <title>popcorn-init | Pathfinder Combat Initiative Tracker</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png"> 
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="src/3rd/semantic/build/packaged/css/semantic.css" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  <script src="src/3rd/requirejs/require.js" data-main="src/main.js"></script>
-  <div class="ui button">
-    Test
-  </div>
-  
-  <content class="ui four column grid doubling">
-    <div class="column">1</div>
-    <div class="column">2</div>
-    <div class="column">3</div>
-    <div class="column">4</div>
-  </content>
-  
-  <script src="src/3rd/jquery/dist/jquery.js"></script>
-  <script src="src/3rd/semantic/build/packaged/javascript/semantic.js"></script>
+    <div class="ui inverted menu main fixed transparent">
+        <div class="title item">
+            <b>popcorn-</b><em>init</em>
+        </div>
+        <a class="item">
+            <i class="remove sign icon"></i> Reset
+        </a>
+        <a class="item">
+            <i class="play icon"></i> Next
+        </a>
+        <a class="item right" id="menu-help">
+            <i class="help circle icon"></i>
+        </a>
+    </div>
+
+    <div id="main-content">
+        <div class="ui items">
+            <div class="item">
+                <div class="content">
+                    <div class="name" contenteditable>Dummy character A</div>
+                    <div class="description">ABC</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ui horizontal icon divider">
+            <i class="circular add icon"></i>
+        </div>
+
+        <div class="ui page grid">
+            <div class="ui center aligned column">
+                <div class="ui button icon labeled green">
+                    <i class="add sign icon"></i>Add Character
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui modal" id="modal-help">
+        <i class="close icon"></i>
+        <div class="header">
+            What is popcorn-init?
+        </div>
+        <div class="content">
+            <p>
+                Popcorn initiative is a neat solution to the usual boring initiative rolls during a standard Pathfinder combat.<br />
+                It is an original idea by <a href="https://twitter.com/TheAngryDM">@TheAngryDM</a>
+            </p>
+            <p>
+                For details about what it is and what it does, make sure to
+                <a href="http://angrydm.com/2013/09/popcorn-initiative-a-great-way-to-adjust-dd-and-pathfinder-initiative-with-a-stupid-name/">read his blog post</a>.
+            </p>
+            <div class="ui horizontal icon divider">
+                <i class="circular heart icon"></i>
+            </div>
+            <p>
+                This tool was made to help myself during our campaigns, but feel free to use it.
+                I'll throw in my twitter, in case, you know.
+            </p>
+            <a href="https://twitter.com/fourniermart" class="ui button mini icon labeled blue">
+                <i class="twitter icon"></i>@fourniermart
+            </a>
+        </div>
+    </div>
+    <script src="src/3rd/requirejs/require.js" data-main="src/main.js"></script>
 </body>
 </html>

@@ -1,9 +1,13 @@
-﻿define(['jquery', 'marionette', 'backbone'], function ($, Marionette, Backbone) {
+﻿define(['jquery', 'marionette', 'backbone', 'semantic'], function ($, Marionette, Backbone, Semantic) {
     var app = new Marionette.Application();
-    
-    app.addInitializer(function(){
-      console.log('init.');
+
+    app.addInitializer(function () {
+        $('#menu-help').bind('click', app.showHelp)
     });
-    
+
+    app.showHelp = function () {
+        $('#modal-help').modal('show');
+    }
+
     return app;
 });

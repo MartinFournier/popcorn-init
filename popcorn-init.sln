@@ -8,20 +8,20 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "popcorn-init", "http://loca
 		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_8939"
-		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\Dev\popcorn-init\"
+		Debug.AspNetCompiler.PhysicalPath = "..\popcorn-init\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_8939\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/localhost_8939"
-		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\Dev\popcorn-init\"
+		Release.AspNetCompiler.PhysicalPath = "..\popcorn-init\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_8939\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "..\..\..\..\..\..\Dev\popcorn-init\"
+		SlnRelativePath = "..\popcorn-init\"
 	EndProjectSection
 EndProject
 Global

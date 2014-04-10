@@ -24,6 +24,8 @@ module.exports = function (grunt) {
                     'src/**/*.js',
                     'src/**/*.html',
                     'src/**/*.css',
+                    'css/*.css',
+                    'index.html',
                 ],
                 options: {
                     livereload: LIVERELOAD_PORT
