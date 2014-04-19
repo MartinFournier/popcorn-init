@@ -15,8 +15,8 @@
         'backbone.wreqr': '3rd/backbone.wreqr/lib/amd/backbone.wreqr',
         'backbone.babysitter': '3rd/backbone.babysitter/lib/amd/backbone.babysitter',
         'handlebars': '3rd/handlebars/handlebars',
+        'hbs': '3rd/require-handlebars-plugin/hbs',
         'localstorage': '3rd/backbone.localStorage/backbone.localStorage',
-        'relational': '3rd/backbone-relational/backbone-relational',
         'semantic': '3rd/semantic/build/packaged/javascript/semantic'
     }
 })
