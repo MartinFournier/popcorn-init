@@ -34,5 +34,9 @@
         });
     }
 
+    CharacterCollection.prototype.addNew = function () {
+        this.add([{ name: "" }]);
+    }
+
     return CharacterCollection;
 });

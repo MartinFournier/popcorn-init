@@ -6,13 +6,25 @@
         template: characterTemplate,
         className: "item",
 
-        initialize: function () {
-            this.listenTo(this.model, 'change', this.render);
+        events: {
+            'keyup .character-name': 'editName',
+            'click .remove-character': 'removeCharacter'
         },
+
+        editName: function (e) {
+            var val = e.target.value;
+            console.log(val);
+            this.model.set('name', val);
+            this.model.save();
+        },
+
+        removeCharacter: function (e) {
+            this.model.destroy();
+        }
     });
 
     var CharacterCollectionView = Marionette.CollectionView.extend({
-        itemView: CharacterView
+        itemView: CharacterView,
     });
 
     return CharacterCollectionView;

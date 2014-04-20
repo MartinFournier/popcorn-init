@@ -17,8 +17,9 @@
 
     app.addInitializer(function () {
         $('#menu-help').bind('click', app.showHelp)
-
-        //app.characters.defaultCharacters();
+        $('#button-add-character').bind('click', function () {
+            app.characters.addNew();
+        });
         app.characters.populate();
     });
 

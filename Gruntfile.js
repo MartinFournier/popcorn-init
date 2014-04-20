@@ -26,6 +26,7 @@ module.exports = function (grunt) {
                     'src/**/*.css',
                     'css/*.css',
                     'index.html',
+                    'src/views/templates/*.hbs'
                 ],
                 options: {
                     livereload: LIVERELOAD_PORT
