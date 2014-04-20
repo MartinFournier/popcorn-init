@@ -8,7 +8,12 @@ body {
     font-family: "Open Sans", sans-serif;
 }
 
-.character-name {
+.ui.input .character-name {
     border: none;
     font-weight:bold;
+    font-family: "Open Sans", sans-serif;
+}
+
+#container-characters .item {
+    min-height: initial;
 }
