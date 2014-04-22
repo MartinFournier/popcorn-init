@@ -13,7 +13,6 @@
 
         editName: function (e) {
             var val = e.target.value;
-            console.log(val);
             this.model.set('name', val);
             this.model.save();
         },
@@ -24,7 +23,7 @@
     });
 
     var CharacterCollectionView = Marionette.CollectionView.extend({
-        itemView: CharacterView,
+        itemView: CharacterView
     });
 
     return CharacterCollectionView;
