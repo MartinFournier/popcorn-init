@@ -15,7 +15,4 @@ packages/
 # Node
 node_modules/
 
-# Bower
-src/3rd
-
 **.TMP
