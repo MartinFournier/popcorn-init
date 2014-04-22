@@ -10,10 +10,14 @@ body {
 
 .ui.input .character-name {
     border: none;
-    font-weight:bold;
+    font-weight: bold;
     font-family: "Open Sans", sans-serif;
 }
 
 #container-characters .item {
     min-height: initial;
+}
+
+.ui.button.button-status {
+    margin-top: 20px;
 }

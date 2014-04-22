@@ -8,7 +8,8 @@
 
         events: {
             'keyup .character-name': 'editName',
-            'click .remove-character': 'removeCharacter'
+            'click .remove-character': 'removeCharacter',
+            'click .button-status': 'nextStatus'
         },
 
         editName: function (e) {
@@ -19,6 +20,12 @@
 
         removeCharacter: function (e) {
             this.model.destroy();
+        },
+
+        nextStatus: function (e) {
+            this.model.nextStatus();
+            this.render();
+            this.model.save();
         }
     });
 

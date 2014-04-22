@@ -3,4 +3,8 @@
         <input class="character-name" placeholder="Character name" value="{{ name }}" />
         <i class="icon trash circular red inverted remove-character"></i>
     </div>
+    <div class="ui button fluid icon labeled button-status {{ status.color }}">
+        <i class="icon {{ status.icon }}"></i>
+        {{ status.text }}
+    </div>
 </div>
