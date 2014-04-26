@@ -18,6 +18,12 @@
             this.model.save();
         },
 
+        serializeData: function () {
+            var data = this.model.toJSON();
+            data.status = this.model.getStatus();
+            return data;
+        },
+
         removeCharacter: function (e) {
             this.model.destroy();
         },
