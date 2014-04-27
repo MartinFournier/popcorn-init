@@ -4,10 +4,27 @@
     'backbone',
     'semantic',
     'entities/characters/characterCollection',
+    'entities/combat/combatModel',
     'views/characters',
-], function ($, Marionette, Backbone, Semantic, CharactersCollection, CharacterCollectionView) {
+    'views/combat'
+], function (
+    $, 
+    Marionette, 
+    Backbone, 
+    Semantic, 
+    CharactersCollection,
+    CombatModel,
+    CharacterCollectionView,
+    CombatView    
+) {
     var app = new Marionette.Application();
     window.app = app;
+
+    app.combat = new CombatModel();
+    app.combatView = new CombatView({
+        el: '#container-combat',
+        model: app.combat
+    });
 
     app.characters = new CharactersCollection();
     app.charactersView = new CharacterCollectionView({
@@ -20,7 +37,10 @@
         $('#button-add-character').bind('click', function () {
             app.characters.addNew();
         });
+
+        app.combat.initialize();
         app.characters.populate();
+        app.combatView.render();
     });
 
     app.showHelp = function () {
