@@ -10,19 +10,29 @@
 
     var CharacterModel = Backbone.Model.extend({
         defaults: {
-            idxStatus: 0,
-            status: statuses[0]
+            statusId: 0,
         },
 
         nextStatus: function () {
-            var i = this.get('idxStatus')
+            var i = this.get('statusId')
             i++;
-            if (i > statuses.length - 1) {
+            if (i >= statuses.length) {
                 i = 0;
             }
-            this.set('idxStatus', i);
-            this.set('status', statuses[i]);
+            this.set('statusId', i);
+        },
+
+        getStatus: function () {
+            var i = this.get('statusId');
+            return statuses[i];
+        },
+
+        resetState: function() {
+            this.set('statusId', 0);
+            this.save();
+            this.trigger('resetState');
         }
+        
     });
 
     return CharacterModel;

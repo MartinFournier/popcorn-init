@@ -5,38 +5,44 @@
 ], function (Backbone, LocalStorage, CharacterModel) {
     var CharacterCollection = Backbone.Collection.extend({
         model: CharacterModel,
-        localStorage: new Backbone.LocalStorage("CharacterCollection")
-    });
+        localStorage: new Backbone.LocalStorage("CharacterCollection"),
 
-    CharacterCollection.prototype.saveAll = function () {
-        this.each(function (model) {
-            model.save();
-        });
-    }
+        addNew: function () {
+            this.add([{ name: "" }]);
+        },
 
-    CharacterCollection.prototype.defaultCharacters = function () {
-        this.add([
-            { name: "Dummy Guy One" },
-            { name: "Dummy Guy Two" }
-        ]);
-    }
+        saveAll: function () {
+            this.each(function (model) {
+                model.save();
+            });
+        },
 
-    CharacterCollection.prototype.populateSuccess = function(context) {
-        if (context.length === 0) {
-            context.defaultCharacters();
+        defaultCharacters: function () {
+            this.add([
+                { name: "Dummy Guy One" },
+                { name: "Dummy Guy Two" }
+            ]);
+        },
+
+        populate: function () {
+            this.fetch({
+                success: this.populateSuccess,
+                error: this.defaultCharacters
+            });
+        },
+
+        populateSuccess: function (context) {
+            if (context.length === 0) {
+                context.defaultCharacters();
+            }
+        },
+
+        resetState: function () {
+            this.each(function (model) {
+                model.resetState(); 
+            });
         }
-    }
-
-    CharacterCollection.prototype.populate = function () {
-        this.fetch({
-            success: this.populateSuccess,
-            error: this.defaultCharacters
-        });
-    }
-
-    CharacterCollection.prototype.addNew = function () {
-        this.add([{ name: "" }]);
-    }
+    });
 
     return CharacterCollection;
 });

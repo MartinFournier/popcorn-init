@@ -12,10 +12,20 @@
             'click .button-status': 'nextStatus'
         },
 
+        modelEvents: {
+            'resetState': 'render'
+        },
+
         editName: function (e) {
             var val = e.target.value;
             this.model.set('name', val);
             this.model.save();
+        },
+
+        serializeData: function () {
+            var data = this.model.toJSON();
+            data.status = this.model.getStatus();
+            return data;
         },
 
         removeCharacter: function (e) {
