@@ -35,6 +35,12 @@
             if (context.length === 0) {
                 context.defaultCharacters();
             }
+        },
+
+        resetState: function () {
+            this.each(function (model) {
+                model.resetState(); 
+            });
         }
     });
 

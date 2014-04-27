@@ -19,11 +19,13 @@
             var turn = this.get('turn');
             turn++;
             this.set('turn', turn);
+            this.characters.resetState();
             this.save();
         },
 
         resetCombat: function () {
             this.set('turn', 1);
+            this.characters.resetState();
             this.save();
         }
     });

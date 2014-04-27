@@ -25,7 +25,14 @@
         getStatus: function () {
             var i = this.get('statusId');
             return statuses[i];
+        },
+
+        resetState: function() {
+            this.set('statusId', 0);
+            this.save();
+            this.trigger('resetState');
         }
+        
     });
 
     return CharacterModel;

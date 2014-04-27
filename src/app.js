@@ -20,16 +20,18 @@
     var app = new Marionette.Application();
     window.app = app;
 
-    app.combat = new CombatModel();
-    app.combatView = new CombatView({
-        el: '#container-combat',
-        model: app.combat
-    });
-
     app.characters = new CharactersCollection();
     app.charactersView = new CharacterCollectionView({
         el: '#container-characters',
         collection: app.characters
+    });
+
+    app.combat = new CombatModel();
+    app.combat.characters = app.characters;
+
+    app.combatView = new CombatView({
+        el: '#container-combat',
+        model: app.combat
     });
 
     app.addInitializer(function () {
