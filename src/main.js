@@ -5,6 +5,9 @@
         },
         'handlebars': {
             exports: 'Handlebars'
+        },
+        'semantic': {
+            deps: ['jquery']
         }
     },
     paths: {
