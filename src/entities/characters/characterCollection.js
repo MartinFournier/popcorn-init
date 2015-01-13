@@ -39,7 +39,13 @@
 
         resetState: function () {
             this.each(function (model) {
-                model.resetState(); 
+                model.resetState();
+            });
+        },
+
+        resetCombat: function () {
+            this.each(function (model){
+                model.resetCombat();
             });
         }
     });

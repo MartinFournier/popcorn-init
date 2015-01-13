@@ -25,7 +25,7 @@
 
         resetCombat: function () {
             this.set('turn', 1);
-            this.characters.resetState();
+            this.characters.resetCombat();
             this.save();
         }
     });
