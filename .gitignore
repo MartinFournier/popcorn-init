@@ -1,6 +1,6 @@
 # don't ignore myself!
 !.gitignore
- 
+
 # Visual Studio
 bin/
 csx/
@@ -11,7 +11,7 @@ rcf/
 *.user
 *.backup.*
 packages/
- 
+
 # Node
 node_modules/
 
@@ -19,3 +19,4 @@ node_modules/
 src/3rd
 
 **.TMP
+**.DS_Store
