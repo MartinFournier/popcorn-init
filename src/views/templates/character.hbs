@@ -1,10 +1,41 @@
 ﻿<div class="content">
     <div class="ui input icon fluid">
-        <input class="character-name" placeholder="Character name" value="{{ name }}" />
-        <i class="icon trash circular red inverted remove-character"></i>
+        <input
+            class="character-name"
+            placeholder="Character name"
+            value="{{ name }}" />
+        <i
+            class="icon edit circular red inverted character-options">
+        </i>
     </div>
-    <div class="ui button fluid icon labeled button-status {{ status.color }}">
+    <div class="ui left icon action input">
+        <i class="user icon"></i>
+        <input class="character-hp" type="numeric" placeholder="Hit Points" value="{{ hp }}">
+        <div class="ui orange button button-character-hp">HP</div>
+    </div>
+    <div style="margin-bottom:10px;"
+        class="ui button fluid icon labeled button-status {{ status.color }}">
         <i class="icon {{ status.icon }}"></i>
         {{ status.text }}
+    </div>
+    <div class="ui button fluid icon labeled button-character-type {{ type.color }}">
+        <i class="icon {{ type.icon }}"></i>
+        {{ type.text }}
+    </div>
+    <div class="ui button fluid icon labeled button-character-bench">
+        <i class="icon archive"></i>
+        Move to Bench
+    </div>
+    <div class="ui modal character-options-modal">
+        <i class="close icon"></i>
+        <div class="header">
+            {{ name }}
+        </div>
+        <div class="content">
+            <div class="ui button fluid icon labeled button-character-type {{ type.color }}">
+                <i class="icon {{ type.icon }}"></i>
+                {{ type.text }}
+            </div>
+        </div>
     </div>
 </div>

@@ -1,5 +1,5 @@
-var LIVERELOAD_PORT = 35729;
-var APP_PORT = 9001;
+var LIVERELOAD_PORT = 35728;
+var APP_PORT = 9002;
 
 module.exports = function (grunt) {
     grunt.initConfig({

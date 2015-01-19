@@ -8,8 +8,12 @@
 
         events: {
             'keyup .character-name': 'editName',
+            'keyup .character-hp': 'editHp',
             'click .remove-character': 'removeCharacter',
-            'click .button-status': 'nextStatus'
+            'click .button-status': 'nextStatus',
+            'click .button-character-type': 'nextType',
+            'click .character-options': 'showOptions',
+            'click .button-character-hp': 'doDamage'
         },
 
         modelEvents: {
@@ -22,18 +26,50 @@
             this.model.save();
         },
 
+        editHp: function(e) {
+            var val = e.target.value;
+            this.model.set('hp', val);
+            this.model.save();
+        },
+
         serializeData: function () {
             var data = this.model.toJSON();
             data.status = this.model.getStatus();
+            data.type = this.model.getType();
             return data;
         },
 
-        removeCharacter: function (e) {
+        removeCharacter: function () {
             this.model.destroy();
         },
 
-        nextStatus: function (e) {
+        nextStatus: function () {
             this.model.nextStatus();
+            this.saveAndRender();
+        },
+
+        nextType: function () {
+            this.model.nextType();
+            this.saveAndRender();
+        },
+
+        showOptions: function() {
+            this.getOptionsModal().modal('show');
+        },
+
+        getOptionsModal: function() {
+            return this.$el.find('.character-options-modal');
+        },
+
+        doDamage: function() {
+            var damage = parseInt(prompt('Enter damage taken'));
+            var actualHp = this.model.get('hp');
+            var newHp = actualHp - damage;
+            this.model.set('hp', newHp);
+            this.saveAndRender();
+        },
+
+        saveAndRender: function() {
             this.render();
             this.model.save();
         }

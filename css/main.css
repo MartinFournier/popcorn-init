@@ -21,3 +21,7 @@ body {
 .ui.button.button-status {
     margin-top: 20px;
 }
+
+.ui.icon.input > .circular.icon.character-options {
+    opacity: 1;
+}

@@ -5,20 +5,30 @@
     'semantic',
     'entities/characters/characterCollection',
     'entities/combat/combatModel',
+    'entities/help/helpModel',
     'views/characters',
-    'views/combat'
+    'views/combat',
+    'views/help'
 ], function (
-    $, 
-    Marionette, 
-    Backbone, 
-    Semantic, 
+    $,
+    Marionette,
+    Backbone,
+    Semantic,
     CharactersCollection,
     CombatModel,
+    HelpModel,
     CharacterCollectionView,
-    CombatView    
+    CombatView,
+    HelpView
 ) {
     var app = new Marionette.Application();
     window.app = app;
+
+    app.help = new HelpModel();
+    app.helpView = new HelpView({
+        el: '#container-help',
+        model: app.help
+    });
 
     app.characters = new CharactersCollection();
     app.charactersView = new CharacterCollectionView({
@@ -35,19 +45,16 @@
     });
 
     app.addInitializer(function () {
-        $('#menu-help').bind('click', app.showHelp)
         $('#button-add-character').bind('click', function () {
             app.characters.addNew();
         });
 
+        //app.helpView.initialize();
+        app.helpView.render();
         app.combat.initialize();
         app.characters.populate();
         app.combatView.render();
     });
-
-    app.showHelp = function () {
-        $('#modal-help').modal('show');
-    }
 
     return app;
 });
