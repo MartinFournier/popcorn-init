@@ -40,7 +40,13 @@
         },
 
         removeCharacter: function () {
-            this.model.destroy();
+            var name = this.model.get('name');
+            if (!name) name = "no-name dude"
+            var doDelete = confirm(
+                'Are you sure you want to remove ' + name + '?'
+            );
+
+            if (doDelete) this.model.destroy();
         },
 
         nextStatus: function () {
@@ -51,14 +57,6 @@
         nextType: function () {
             this.model.nextType();
             this.saveAndRender();
-        },
-
-        showOptions: function() {
-            this.getOptionsModal().modal('show');
-        },
-
-        getOptionsModal: function() {
-            return this.$el.find('.character-options-modal');
         },
 
         doDamage: function() {

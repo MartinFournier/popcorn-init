@@ -11,13 +11,7 @@ define([
 
         showHelp: function () {
             $('#modal-help').modal('show');
-        },
-
-        /*initialize: function() {
-            console.log('init');
-            this.render();
-            console.log(this.$el);
-        }*/
+        }
     });
 
     return HelpView;
